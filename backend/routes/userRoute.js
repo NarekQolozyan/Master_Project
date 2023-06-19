@@ -7,9 +7,8 @@ function usersRoutes(app){
 
     app.post("/login",userController.login_user)
     
-    app.post("/updateUser/:id",userController.updateUser)
+    app.put("/updateUser/:id",userController.updateUser)
 
-    app.post("/addProfilePhotho",userController.addUserProfile)
 }
 
 module.exports = { usersRoutes }

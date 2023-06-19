@@ -7,7 +7,7 @@ module.exports = {
 
     const hashedPassword = await bcrypt.hash(process.env.admin_password, 10);
 
-    return queryInterface.bulkInsert('Users', [
+    return queryInterface.bulkInsert('users', [
       {
         firstName: 'Admin',
         lastName: 'admin',

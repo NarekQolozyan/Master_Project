@@ -1,0 +1,86 @@
+.registration-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px;
+  margin-top: 5%;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.registration-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.registration-container p {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.registration-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.registration-container label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.registration-container input[type="text"],
+.registration-container input[type="email"],
+.registration-container input[type="password"],
+.registration-container input[type="file"] {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+.registration-button{
+  width: 90%;
+  padding: 10px;
+  border: none;
+  font-size: 20px;
+  color: #000;
+  background-color: #ccc;
+  
+  cursor: pointer;
+  border-radius: 4px;
+  
+}
+.registration-button:hover {
+  background-color: #4caf50;
+  color: #fff;
+}
+.registration-container .error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+.registration-container .signUp-massage {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.registration-container .signUp-massage a {
+  color: blue;
+  cursor: pointer;
+}
+
+.hideShow {
+  width: 80px;
+  background-color: #f1f1f1;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.hideShow:hover {
+  background-color: #ccc;
+}

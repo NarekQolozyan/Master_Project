@@ -1,0 +1,28 @@
+.company-nav-bar{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 20px;
+    background-color: rgb(79, 75, 75);
+    color: white;
+  }
+  .nav-bar p{
+    font-family: 'Tilt Prism', cursive;
+    font-size: 24px;
+    color: #d5e1e1;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .nav-bar ul:nth-child(3){
+    margin-left: 50%
+  }
+  .nav-bar ul:nth-child(1) li{
+    margin-left: 60px
+  }
+  .nav-bar ul:nth-child(3) li:nth-child(1){
+    border-right: 2px solid #fff;
+    padding-right: 10px;
+  }
+  ul li {
+    margin:6px 10px 0 0;
+    cursor: pointer;
+  } 

@@ -1,0 +1,84 @@
+*{
+    margin: 0
+  }
+  .container {
+      width: 100%;
+      margin: 0 auto;
+    }
+  .main{
+    padding-top: 30px;
+    background-color: #fdeaaa;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: left;
+  }
+  .main img{
+    height: 500px;
+  }
+  .context{
+    width: 60%;
+  }
+  .context p{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 30px;
+  }
+  .footer p{
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 20px;
+    line-height: 30px;
+  }
+  .footer{
+    display: flex;
+    background-color: #e4f3c6;
+    padding: 20px 0;
+  }
+  .contact-box{
+    width: 38%;
+  }
+  .contact-box p{
+    text-align: center;
+    font-size: 22px;
+  }
+  .contact{
+    text-align: left;
+    margin-left: 30%;
+    margin-top: 5%;
+    line-height: 40px;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+  }
+  .nav-bar{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 20px;
+    background-color: rgb(79, 75, 75);
+    color: white;
+  }
+  .nav-bar p{
+    font-family: 'Tilt Prism', cursive;
+    font-size: 24px;
+    color: #d5e1e1;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .nav-bar ul:nth-child(3){
+    margin-left: 60%
+  }
+  .nav-bar ul:nth-child(1) li{
+    margin-left: 60px
+  }
+  .nav-bar ul:nth-child(3) li:nth-child(1){
+    border-right: 2px solid #fff;
+    padding-right: 10px;
+  }
+  ul li {
+    margin-right: 10px;
+    cursor: pointer;
+  } 

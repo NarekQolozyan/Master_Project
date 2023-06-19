@@ -16,15 +16,28 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      profession: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       description: {
         type: Sequelize.STRING
       },
       skills: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(500),
       },
       salary: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       }, 
+      jobType: {
+        type: Sequelize.STRING
+      },
+      experience: {
+        type: Sequelize.STRING
+      },
+      location: {
+        type: Sequelize.STRING
+      },
       companyId: {
         type: Sequelize.INTEGER,
       },
@@ -33,7 +46,7 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATEONLY
       },
       updatedAt: {
         allowNull: false,

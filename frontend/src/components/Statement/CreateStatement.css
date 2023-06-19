@@ -1,0 +1,30 @@
+  .statement-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .myStatement {
+    width: 30%;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .myStatement h2 {
+    margin-bottom: 10px;
+  }
+  
+  .myStatement label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .myStatement label input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  

@@ -38,6 +38,9 @@ module.exports = (sequelize, DataTypes) => {
     role:{ 
       type: DataTypes.STRING,
       defaultValue: "company"
+    },
+    image:{
+      type: DataTypes.STRING
     }
   }, {
     sequelize,

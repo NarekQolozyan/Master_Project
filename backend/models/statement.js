@@ -21,18 +21,31 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
+    profession: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     description: {
       type: DataTypes.STRING,
       allowNull: false
     },
     skills: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(500),
     },
     salary: {
       type: DataTypes.DECIMAL(10,2),
       allowNull: false
     },
     image: {
+      type: DataTypes.STRING
+    },
+    jobType: {
+      type: DataTypes.STRING
+    },
+    experience: {
+      type: DataTypes.STRING
+    },
+    location: {
       type: DataTypes.STRING
     },
     companyId: {
