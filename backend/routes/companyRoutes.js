@@ -12,6 +12,8 @@ function companiesRoutes(app){
     app.post("/update_company/:id",companyController.updateCompany)
 
     app.post("/addPhoto/:id",upload.single("profilePhoto"),companyController.addCompanyProfile)
+
+    app.delete('/delete_company/:id',companyController.deleteCompany)
 }
 
 module.exports = {companiesRoutes}

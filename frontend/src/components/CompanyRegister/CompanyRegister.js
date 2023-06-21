@@ -67,6 +67,7 @@ function RegistrationComponent() {
         <button type="button" onClick={handleRegistration} disabled={loading} className='registration-button'>
           Register
         </button>
+        <p className=''>Already have an account? <a onClick={() => navigate('/companyLogin')}>Sign in</a></p>
       </form>
     </div>
     </div>

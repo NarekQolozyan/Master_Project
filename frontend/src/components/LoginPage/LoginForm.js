@@ -25,7 +25,6 @@ const LoginForm = () => {
       const response = await dispatch(login({ firstName, lastName, password }));
       if (login.fulfilled.match(response)) {
         navigate('/userPage');
-        console.log(user.user.id,"xzcdzdcvdzv")
       } else {
         setErr('Invalid login credentials');
       }
@@ -76,11 +75,11 @@ const LoginForm = () => {
           onChange={(e) => setPassword(e.target.value)}
           visibilityToggle={{ visible: passwordVisible, onVisibleChange: setPasswordVisible }}
           />
-          {error && <p className="error-message">{error}</p>}
         <Button style={{ width: 80 }} onClick={() => setPasswordVisible((prevState) => !prevState)} className='hideShow'>
           {passwordVisible ? 'Hide' : 'Show'}
         </Button>
       </Space>
+          {error && <p className="error-message">{error}</p>}
       <br />
       <button type="submit" disabled={loading}>
         {loading ? 'Logging in...' : 'Login'}

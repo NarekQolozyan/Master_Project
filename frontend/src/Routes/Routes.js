@@ -13,6 +13,7 @@ import CompanyLogin from '../components/CompanyLogin/CompanyLogin';
 import CompanyPage from '../components/Company/CompanyPage';
 import CreateStatement from '../components/Statement/CreateStatement';
 import StatementPage from '../components/StatementPage/StatementPage';
+import CompanyProfile from '../components/CompanyProfile/CompanyProfile';
 
 export default function AppRoutes() {
   return (
@@ -30,6 +31,7 @@ export default function AppRoutes() {
         <Route path='/companyPage' element={<CompanyPage/>}/>
         <Route path='/create_statemant' element={<CreateStatement/>} />
         <Route path='/statement' element={<StatementPage/>} />
+        <Route path='/companyProfile' element={<CompanyProfile/>} />
     </Routes>
   )
 }

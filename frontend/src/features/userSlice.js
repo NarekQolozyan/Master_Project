@@ -17,7 +17,6 @@ export const login = createAsyncThunk(
       }
 
       const data = await response.json();
-      console.log(data.user.id)
       localStorage.setItem('userId', data.user.id)
       localStorage.setItem('jwt', data.jwt);
       
@@ -84,10 +83,35 @@ export const register = createAsyncThunk(
         return {type: 'user/logout'}
   }
 
+  export const deleteUser = createAsyncThunk(
+    'user/deleteUser',
+    async () => {
+      const id = localStorage.getItem('userId');
+      try {
+        const response = await fetch(`http://localhost:3005/deleteUser/${id}`, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+  
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+  
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        throw new Error('There was an error deleting the user: ' + error.message);
+      }
+    }
+  );
+
 const initialState = {
   user: null,
   updateUser: null,
   registerUser: null,
+  deleteUser: null,
   loading: false,
   error: null,
 };
@@ -131,6 +155,21 @@ const userSlice = createSlice({
         state.updateUser = action.payload;
       })
       .addCase(updateUser.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
+      .addCase(deleteUser.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(deleteUser.fulfilled, (state) => {
+        state.loading = false;
+        state.user = null;
+        state.updateUser = null;
+        state.registerUser = null;
+        state.error = null;
+      })
+      .addCase(deleteUser.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
       })

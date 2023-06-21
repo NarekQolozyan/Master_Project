@@ -59,8 +59,54 @@ export const companyLogin = createAsyncThunk(
         return {type: 'user/logout'}
   }
 
+  export const updateCompany = createAsyncThunk(
+    "company/update",
+    async ({ companyId, name, email, password }) => {
+      try {
+        const response = await fetch(`http://localhost:3005/update_company/${companyId}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, email, password }),
+        });
+  
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+  
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        throw new Error("There was an error updating: " + error.message);
+      }
+    }
+  );
+
+  export const deleteCompany = createAsyncThunk(
+    "company/delete",
+    async (companyId) => {
+      try {
+        const response = await fetch(`http://localhost:3005/delete_company/${companyId}`, {
+          method: "DELETE",
+        });
+  
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+  
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        throw new Error("There was an error deleting: " + error.message);
+      }
+    }
+  );
+  
+  
 const initialState = {
   company: null,
+  updateCompany: null,
   loading: false,
   error: null,
   registerCompany: null
@@ -96,6 +142,33 @@ const companySlice = createSlice({
         state.loading = false;
         state.error = action.error.message;
       })
+      .addCase(updateCompany.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(updateCompany.fulfilled, (state, action) => {
+        state.loading = false;
+        state.company = action.payload.company;
+      })
+      .addCase(updateCompany.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
+      .addCase(deleteCompany.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(deleteCompany.fulfilled, (state, action) => {
+        state.loading = false;
+        state.company = null
+        state.updateCompany = null
+        state.registerCompany = null
+        state.error = null
+      })
+      .addCase(deleteCompany.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      });
   },
 });
 

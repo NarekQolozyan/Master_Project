@@ -4,6 +4,7 @@ import { fetchStatements, selectAllStatements, fetchStatementById } from '../../
 import './Jobs.css';
 import { EnvironmentFilled, ClockCircleFilled } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
+import NavBar from '../navbar/Nav-bar';
 
 const Jobs = () => {
   const navigate = useNavigate();
@@ -24,25 +25,7 @@ const Jobs = () => {
 
   return (
     <div className="container">
-      <div className='nav-bar'>
-        <p onClick={() => navigate('/')}>Dream Job</p>
-        <ul>
-          <li>
-            Աշխատանք
-          </li>
-          <li>
-            Ընկերություններ
-          </li>
-        </ul>
-        <ul>
-          <li onClick={() => navigate("/login")}>
-            Մուտք
-          </li>
-          <li>
-            Գրանցում
-          </li>
-        </ul>
-      </div>
+      <NavBar/>
       <div className="header">
         {statements.map((statement) => (
           <div className="statement" key={statement.id}>

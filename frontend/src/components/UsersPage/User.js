@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchStatements } from '../../features/statementSlice';
 import './UserPage.css';
-import { HeartOutlined, InstagramOutlined, MailOutlined, LinkedinOutlined,LogoutOutlined } from '@ant-design/icons';
+import { HeartOutlined, InstagramOutlined, MailOutlined, LinkedinOutlined } from '@ant-design/icons';
 import {useNavigate} from "react-router-dom"
 import { logOut } from '../../features/userSlice';
 import logo from '../../logo/logo.jpg'
-
+import NavBar from '../navbar/Nav-bar';
 
 const UserPage = () => {
   const navigate = useNavigate()
@@ -24,32 +24,15 @@ const UserPage = () => {
   const iconStyle = {
   fontSize: "22px"  
 }
+
+
   return (
     <div className="container">
-      <div className='nav-bar'>
-        <p onClick={() => navigate('/')}>Dream Job</p>
-        <ul>
-            <li onClick={() => navigate('/jobs')}>
-              Աշխատանք
-            </li>
-            <li>
-              Ընկերություններ
-            </li>
-          </ul>
-          <ul>
-            <li onClick={() => navigate('/userProfile')}>
-              Profile
-            </li>
-            <li>
-              <LogoutOutlined type={"primary"} onClick={handleLogOut}/>
-            </li>
-          </ul>
-          
-      </div>
+      <NavBar/>
       <div className="main">
         <img src={logo} alt='Logo'/>
         <div className='context'>
-          <h1>Welcome to our website!</h1>
+          <h1 >Welcome to our website!</h1>
           <p>
             At Dream Job, we believe in the power of knowledge and the joy of discovery. Our platform is designed to provide you with a wealth of information and insights on a wide range of topics. Whether you're a student, a professional, or simply a curious individual, we're here to satisfy your thirst for knowledge.<br/><br/>
 

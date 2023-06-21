@@ -1,5 +1,7 @@
-.company-nav-bar{
+
+.nav-bar{
     display: flex;
+    width: 100%;
     justify-content: space-around;
     padding: 15px 20px;
     background-color: rgb(79, 75, 75);
@@ -13,7 +15,7 @@
     font-weight: bold;
   }
   .nav-bar ul:nth-child(3){
-    margin-left: 50%
+    margin-left: 60%
   }
   .nav-bar ul:nth-child(1) li{
     margin-left: 60px
@@ -23,6 +25,6 @@
     padding-right: 10px;
   }
   ul li {
-    margin:6px 10px 0 0;
+    margin-right: 10px;
     cursor: pointer;
   } 

@@ -3,9 +3,10 @@ import { createStatements } from '../../features/statementSlice';
 import { useNavigate } from 'react-router-dom';
 import { companyLogOut } from '../../features/companySlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { LogoutOutlined } from "@ant-design/icons";
 import './CreateStatement.css';
 import { Button, Form, Input } from 'antd';
+import NavBar from '../navbar/Nav-bar';
+
 
 export default function CreateStatement() {
   const company = useSelector((state) => state.company.company);
@@ -50,22 +51,7 @@ export default function CreateStatement() {
 
   return (
     <div>
-      <div className='nav-bar'>
-        <p onClick={() => navigate('/companyPage')}>Dream Job</p>
-        <ul>
-          <li onClick={() => navigate('/create_statemant')}>
-            Ստեղծել հայտարարություն
-          </li>
-        </ul>
-        <ul>
-          <li onClick={() => navigate('/companyProfile')}>
-            My Profile
-          </li>
-          <li>
-            <LogoutOutlined type={"primary"} onClick={handleLogOut} />
-          </li>
-        </ul>
-      </div>
+      <NavBar/>
       <div className='statement-container'>
         <div className='myStatement'>
           <h2>Ստեղծել հայտարարություն</h2>
@@ -91,7 +77,6 @@ export default function CreateStatement() {
               name="category"
               rules={[
                 {
-                  required: true,
                   message: 'Please input the category!',
                 },
               ]}
@@ -104,7 +89,6 @@ export default function CreateStatement() {
               name="description"
               rules={[
                 {
-                  required: true,
                   message: 'Please input the description!',
                 },
               ]}
@@ -122,7 +106,6 @@ export default function CreateStatement() {
               name="salary"
               rules={[
                 {
-                  required: true,
                   message: 'Please input the salary!',
                 },
               ]}
@@ -134,7 +117,6 @@ export default function CreateStatement() {
               name="jobType"
               rules={[
                 {
-                  required: true,
                   message: 'Please input the job type!',
                 },
               ]}
@@ -146,7 +128,6 @@ export default function CreateStatement() {
               name="experience"
               rules={[
                 {
-                  required: true,
                   message: 'Please input the experience!',
                 },
               ]}
@@ -159,7 +140,6 @@ export default function CreateStatement() {
               name="location"
               rules={[
                 {
-                  required: true,
                   message: 'Please input the location!',
                 },
               ]}
@@ -172,7 +152,6 @@ export default function CreateStatement() {
               name="profession"
               rules={[
                 {
-                  required: true,
                   message: 'Please input the location!',
                 },
               ]}

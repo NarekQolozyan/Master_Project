@@ -25,7 +25,6 @@ const CompanyLogin = () => {
       const response = await dispatch(companyLogin({ name, email, password }));
       if (companyLogin.fulfilled.match(response)) {
         navigate('/companyPage');
-        // console.log(user.user.id,"xzcdzdcvdzv")
       } else {
         setErr('Invalid login credentials');
       }

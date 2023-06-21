@@ -5,6 +5,8 @@ import './Home.css';
 import { HeartOutlined, InstagramOutlined, MailOutlined, LinkedinOutlined } from '@ant-design/icons';
 import {useNavigate} from "react-router-dom"
 import logo from '../../logo/logo.jpg'
+import NavBar from '../navbar/Nav-bar';
+
 
 const Home = () => {
   const navigate = useNavigate()
@@ -18,25 +20,7 @@ const iconStyle = {
 }
   return (
     <div className="container">
-      <div className='nav-bar'>
-        <p onClick={() => navigate('/')}>Dream Job</p>
-        <ul>
-            <li onClick={() => navigate('/jobs')}>
-              Աշխատանք
-            </li>
-            <li>
-              Ընկերություններ
-            </li>
-          </ul>
-          <ul>
-            <li onClick={()=> navigate("./logIn")}>
-              Մուտք
-            </li>
-            <li onClick={() => navigate('./signUp')}>
-              Գրանցում
-            </li>
-          </ul>
-      </div>
+      <NavBar/>
       <div className="main">
         <img src={logo} alt='Logo'/>
         <div className='context'>

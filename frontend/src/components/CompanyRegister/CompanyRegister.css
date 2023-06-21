@@ -3,7 +3,7 @@
   margin: 0 auto;
   padding: 40px;
   margin-top: 5%;
-  background-color: #f9f9f9;
+  background-color: #d1c8b7;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -83,4 +83,14 @@
 
 .hideShow:hover {
   background-color: #ccc;
+}
+.registration-container p{
+  font-size: 14px;
+  color: #000;
+  text-align: left;
+  margin-top: 10px;
+}
+.registration-container a{
+  border-bottom: 1px solid #000;
+  cursor: pointer;
 }

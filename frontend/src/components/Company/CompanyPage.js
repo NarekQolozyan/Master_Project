@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchStatements } from '../../features/statementSlice';
-import './CompanyPage.css';
 import { HeartOutlined, InstagramOutlined, MailOutlined, LinkedinOutlined,LogoutOutlined } from '@ant-design/icons';
 import {useNavigate} from "react-router-dom"
 import { companyLogOut } from '../../features/companySlice';
 import logo from '../../logo/logo.jpg'
+import NavBar from '../navbar/Nav-bar';
 
 
 const CompanyPage = () => {
@@ -26,24 +26,7 @@ const CompanyPage = () => {
 }
   return (
     <div className="container">
-      <div className='nav-bar'>
-        <p onClick={() => navigate('/companyPage')}>Dream Job</p>
-        <ul>
-            
-            <li onClick={() => navigate('/create_statemant')}>
-              Ստեղծել հայտարարություն
-            </li>
-          </ul>
-          <ul>
-            <li onClick={() => navigate('/companyProfile')}>
-              My Profile
-            </li>
-            <li>
-              <LogoutOutlined type={"primary"} onClick={handleLogOut}/>
-            </li>
-          </ul>
-          
-      </div>
+      <NavBar/>
       <div className="main">
         <img src={logo} alt='Logo'/>
         <div className='context'>

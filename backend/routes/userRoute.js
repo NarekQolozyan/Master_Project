@@ -9,6 +9,8 @@ function usersRoutes(app){
     
     app.put("/updateUser/:id",userController.updateUser)
 
+    app.delete('/deleteUser/:id',userController.deleteUser)
+
 }
 
 module.exports = { usersRoutes }

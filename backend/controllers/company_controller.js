@@ -96,6 +96,25 @@ async function updateCompany(req, res) {
   }
 }
 
+async function deleteCompany(req, res) {
+  const { id } = req.params;
+
+  try {
+    const company = await Company.findByPk(id);
+
+    if (!company) {
+      return res.status(404).json({ error: 'Company not found' });
+    }
+
+    await company.destroy();
+
+    res.status(200).json({ status: 'Company deleted successfully' });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: 'Error deleting company' });
+  }
+}
+
 function getAll(req, res) {
   Company.findAll()
     .then((companies) => res.json(companies))
@@ -138,4 +157,5 @@ module.exports = {
   updateCompany,
   addCompanyProfile,
   getAll,
+  deleteCompany
 };
