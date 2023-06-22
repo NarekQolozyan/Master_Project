@@ -17,12 +17,7 @@ const Jobs = () => {
   const iconStyle = {
     fontSize: '22px',
   };
-
-  const handleNavigate = (statementId) => {
-    dispatch(fetchStatementById(statementId));
-    navigate('/statement');
-  };
-
+  
   return (
     <div className="container">
       <NavBar/>

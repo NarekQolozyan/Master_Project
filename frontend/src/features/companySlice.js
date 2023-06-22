@@ -102,14 +102,33 @@ export const companyLogin = createAsyncThunk(
       }
     }
   );
+
+  export const fetchAllCompanies = createAsyncThunk(
+    "company/fetchAll",
+    async () => {
+      try {
+        const response = await fetch("http://localhost:3005/all_companies");
   
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
   
+        const data = await response.json();
+        // console.log(data)
+        return data;
+      } catch (error) {
+        throw new Error("There was an error fetching companies: " + error.message);
+      }
+    }
+  );
+ 
 const initialState = {
   company: null,
   updateCompany: null,
   loading: false,
   error: null,
-  registerCompany: null
+  registerCompany: null,
+  allCompanies: null
 };
 
 const companySlice = createSlice({
@@ -166,6 +185,18 @@ const companySlice = createSlice({
         state.error = null
       })
       .addCase(deleteCompany.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
+      .addCase(fetchAllCompanies.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchAllCompanies.fulfilled, (state, action) => {
+        state.loading = false;
+        state.allCompanies = action.payload; // Assuming the payload contains an array of companies
+      })
+      .addCase(fetchAllCompanies.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
       });

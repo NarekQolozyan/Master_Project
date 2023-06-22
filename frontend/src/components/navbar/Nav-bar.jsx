@@ -37,7 +37,7 @@ export default function NavBar() {
           <p onClick={() => navigate('/')}>Dream Job</p>
           <ul>
             <li onClick={() => navigate('/jobs')}>Աշխատանք</li>
-            <li>Ընկերություններ</li>
+            <li onClick={() => navigate('/allCompanies')}>Ընկերություններ</li>
           </ul>
           <ul>
             <li onClick={() => navigate('/userProfile')}>Profile</li>
@@ -70,11 +70,11 @@ export default function NavBar() {
           <p onClick={() => navigate('/')}>Dream Job</p>
           <ul>
             <li onClick={() => navigate('/jobs')}>Աշխատանք</li>
-            <li>Ընկերություններ</li>
+            <li onClick={() => navigate('/allCompanies')}>Ընկերություններ</li>
           </ul>
           <ul>
-            <li onClick={() => navigate('./logIn')}>Մուտք</li>
-            <li onClick={() => navigate('./signUp')}>Գրանցում</li>
+            <li onClick={() => navigate('/logIn')}>Մուտք</li>
+            <li onClick={() => navigate('/signUp')}>Գրանցում</li>
           </ul>
         </div>
       );

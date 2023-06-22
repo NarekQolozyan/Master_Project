@@ -3,7 +3,7 @@ const upload = require("../midlleware/upload")
 
 function companiesRoutes(app){
 
-    app.get("/all_company",companyController.getAll)
+    app.get("/all_companies",companyController.getAll)
 
     app.post("/register_company",upload.single("image"),companyController.register_company)
 

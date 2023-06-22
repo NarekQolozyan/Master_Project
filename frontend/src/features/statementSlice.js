@@ -60,7 +60,7 @@ const statementsSlice = createSlice({
       })
       .addCase(fetchStatements.fulfilled, (state, action) => {
         state.loading = false;
-        state.statements = action.payload; // Update the statements array in the state
+        state.statements = action.payload;
       })
       .addCase(fetchStatements.rejected, (state, action) => {
         state.loading = false;
