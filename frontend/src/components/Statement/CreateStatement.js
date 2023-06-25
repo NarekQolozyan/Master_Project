@@ -26,11 +26,6 @@ export default function CreateStatement() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleLogOut = () => {
-    dispatch(companyLogOut);
-    navigate('/');
-  };
-
   const handleCreating = () => {
     try {
       dispatch(createStatements({ category, description, skills, salary, jobType, photo, experience, location, companyId, profession }));

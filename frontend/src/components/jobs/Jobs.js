@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 import NavBar from '../navbar/Nav-bar';
 
 const Jobs = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const statements = useSelector(selectAllStatements);
   useEffect(() => {

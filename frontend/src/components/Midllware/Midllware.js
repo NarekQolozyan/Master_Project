@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function LogIn() {
     const navigate = useNavigate()
+    localStorage.clear()
   return (
     <div className='signUp-container'>
         <div className='signUp-main'>
@@ -20,6 +21,7 @@ export default function LogIn() {
 
 export function SignUp() {
     const navigate = useNavigate()
+    localStorage.clear()
     return (
         <div className='signUp-container'>
             <div className='signUp-main'>

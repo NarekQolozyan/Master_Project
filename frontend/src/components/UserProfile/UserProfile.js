@@ -15,10 +15,13 @@ const UserProfile = () => {
   const [firstName, setFirstName] = useState(user?.firstName || '');
   const [lastName, setLastName] = useState(user?.lastName || '');
   const [password, setPassword] = useState('');
-  const [comfirmPassword, setComfirmPassword] = useState()
+  const [confirmPassword, setConfirmPassword] = useState()
 
   const handleUpdateUser = () => {
-    if(password === comfirmPassword){
+    if(!firstName || !lastName || !password || !confirmPassword){
+      alert("Please fill all fields")
+    }
+    else if(password === confirmPassword){
       dispatch(updateUser({ firstName, lastName, password }));
       alert("Concratulations, your data has been successfully updated")
       navigate('/userPage')
@@ -66,12 +69,12 @@ const UserProfile = () => {
             />
           </div>
           <div>
-            <label htmlFor="password">Comfirm Password:</label>
+            <label htmlFor="password">Confirm Password:</label>
             <input
               type="text"
               id="password"
-              value={comfirmPassword}
-              onChange={(e) => setComfirmPassword(e.target.value)}
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </div>
           <button onClick={handleUpdateUser} className='update'>Update User</button><br/>

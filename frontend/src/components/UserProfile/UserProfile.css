@@ -21,7 +21,9 @@
   
   .user-profile-container input[type="text"],
   .user-profile-container input[type="password"] {
-    width: 100%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -31,7 +33,9 @@
   .update {
     display: block;
     font-size: 20px;
-    width: 100%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     padding: 10px;
     background-color: #4caf50;
     color: #fff;
@@ -47,7 +51,9 @@
   .delete {
     display: block;
     font-size: 20px;
-    width: 100%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     padding: 10px;
     background-color: #c70b0b;
     color: #fff;

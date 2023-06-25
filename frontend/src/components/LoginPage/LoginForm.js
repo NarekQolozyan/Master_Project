@@ -20,7 +20,7 @@ const LoginForm = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-  
+    
     try {
       const response = await dispatch(login({ firstName, lastName, password }));
       if (login.fulfilled.match(response)) {

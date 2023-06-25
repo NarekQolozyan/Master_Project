@@ -61,7 +61,7 @@ const CompanyProfile = () => {
             />
           </div>
           <div>
-            <label htmlFor="password">Comfirm Password:</label>
+            <label htmlFor="password">Confirm Password:</label>
             <input
               type="text"
               id="password"

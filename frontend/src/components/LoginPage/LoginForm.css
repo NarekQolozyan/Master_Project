@@ -4,9 +4,6 @@
   align-items: center;
   justify-content: center;
 }
-.title{
-  margin-left: 12px;
-}
 .login-nav-bar {
   display: flex;
   align-items: center;
